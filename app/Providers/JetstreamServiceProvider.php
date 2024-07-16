@@ -24,10 +24,7 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
-         // Force HTTPS if we are in production
-         if ($this->app->environment('production')) {
-            URL::forceScheme('https');
-        }
+        
     }
 
     /**
